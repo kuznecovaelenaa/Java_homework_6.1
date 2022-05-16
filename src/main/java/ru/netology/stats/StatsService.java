@@ -3,7 +3,7 @@ package ru.netology.stats;
 public class StatsService {
 
     //1
-    public long sum(int[] sales) {
+    public long sum(long[] sales) {
         long sum = 0;
         for (long sale : sales) {
             sum += sale;
@@ -12,17 +12,14 @@ public class StatsService {
     }
 
     //2
-    public long aver(int[] sales) {
-        long sum = 0;
-        for (long sale : sales) {
-            sum += sale;
-        }
+    public long aver(long[] sales) {
+        long sum = sum(sales);
         long aver = sum / sales.length;
         return aver;
     }
 
     //3
-    public long max(int[] sales) {
+    public long max(long[] sales) {
         int maxMouth = 0;
         int mouth = 0;
         for (long sale : sales) {
@@ -35,7 +32,7 @@ public class StatsService {
     }
 
     //4
-    public long min(int[] sales) {
+    public long min(long[] sales) {
         int minMouth = 0;
         int mouth = 0;
         for (long sale : sales) {
@@ -48,12 +45,8 @@ public class StatsService {
     }
 
     //5
-    public long below(int[] sales) {
-        long sum = 0;
-        for (long sale : sales) {
-            sum += sale;
-        }
-        long aver = sum / sales.length;
+    public long below(long[] sales) {
+        long aver = aver(sales);
         int count = 0;
         for (int i = 0; i < sales.length; i++) {
             if (sales[i] < aver) {
@@ -64,12 +57,8 @@ public class StatsService {
     }
 
     //6
-    public long above(int[] sales) {
-        long sum = 0;
-        for (long sale : sales) {
-            sum += sale;
-        }
-        long aver = sum / sales.length;
+    public long above(long[] sales) {
+        long aver = aver(sales);
         int count = 0;
         for (int i = 0; i < sales.length; i++) {
             if (sales[i] > aver) {
